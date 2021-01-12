@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 class Actor {
   constructor(fname, lname, birthday, image, link) {
     this.fname = fname;
@@ -5,11 +7,10 @@ class Actor {
     this.birthday = birthday;
     this.image = image;
     this.link = link;
+    this.Age = this.Age.bind(this);
   }
-  ageOfActor() {
-        const currentYear = new Date().getFullYear();
-        const age = currentYear - this.birthday;
-        return age;
-    }
+  Age() {
+    return moment(this.birthday, 'YYYY-MM-DD').fromNow().split(" ")[0];
+  }
 }
 export default Actor;

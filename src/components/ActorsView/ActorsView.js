@@ -16,16 +16,16 @@ class ActorsView extends React.Component {
         </a>
         <Card.Body>
           <Card.Title>{this.props.actors[i].fname} {this.props.actors[i].lname}</Card.Title>
-          <Card.Text>{this.props.actors[i].birthday}
+          <Card.Text>Born: {this.props.actors[i].birthday}
           </Card.Text>
-          <Card.Text>{this.props.actors[i].ageOfActor()}
+          <Card.Text>Age: {this.props.actors[i].Age()}
           </Card.Text>
         </Card.Body>
       </Card>
       cardItems.push(cardContent);
     }
     return (
-      <div className="d-flex justify-content-between">{cardItems}</div>
+      <div className="d-flex justify-content-between pb-5">{cardItems}</div>
     )
   }
 }
