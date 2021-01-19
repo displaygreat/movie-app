@@ -9,10 +9,6 @@ class MoviePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // resultsTitle: [],
-      // resultsId: [],
-      // selectedMovies: [],
-      // selectedMoviesId: []
       searchResults: [],
       movies: []
     }
@@ -47,7 +43,6 @@ class MoviePage extends React.Component {
   searchMovie = (searchText) => {
     if(!searchText) {
       this.setState({
-        // resultsTitle: []
         searchResults: []
       })
       return;
@@ -61,29 +56,10 @@ class MoviePage extends React.Component {
               this.setState({
                 searchResults: movieData
               })
-              // console.log(res);
-              //   const title = res.data.results.map((item) => {
-              //       return item.title;
-              //   });
-              //   const id = res.data.results.map((item) => {
-              //       return item.id;
-              //   });
-              //   this.setState({
-              //       resultsTitle: title,
-              //       resultsId: id
-              //   })
             });
-    
-    //  axios.get(`https://api.themoviedb.org/3/movie/<<movie_id>>/credits?api_key=${api_key}&language=en-US`)
-
-    // axios.get(`https://api.themoviedb.org/3/movie/${this.props.resultsId}?api_key=${api_key}&language=en-US`)
-
   }
 
   render() {
-    // const MoviesCard = this.state.selectedMovies.map((movie, id) => {
-    //   return <MovieCard key={id} movie={movie} />
-    // })
     const {searchResults, movies} = this.state;
     const resultTitles = searchResults.map(searchResults => searchResults.original_title);
     const moviesGallery = movies.map((movie) => {
@@ -98,8 +74,6 @@ class MoviePage extends React.Component {
           placeholder="Search movie"
           titles={resultTitles}
           searchResults = {searchResults}
-          // resultsTitle={this.state.resultsTitle}
-          // resultsId={this.state.resultsId} 
           />
         <div className="movies-desk">{moviesGallery}</div>
       </div>

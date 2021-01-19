@@ -1,11 +1,8 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import './ActorCard.css';
 
 class ActorCard extends React.Component {
-  // constructor (props) {
-  //   super(props);
-  // }
-
   render() {
     //solution without filter
     
@@ -27,7 +24,7 @@ class ActorCard extends React.Component {
     //   cardItems.push(cardContent);
     // }
     return (
-      <Card style={{ width: '18rem' }}>
+      <Card className="actor-card" style={{ width: '18rem' }}>
         <a href={this.props.actor.link} target="_blank" rel="noreferrer">
           <Card.Img variant="top" src={this.props.actor.image} />
         </a>

@@ -10,7 +10,7 @@ class MovieCard extends React.Component {
 
   render() {
     return (
-      <Card style={{ width: '18rem' }}>
+      <Card className="movie-card" style={{ width: '18rem' }}>
           <Card.Img variant="top" src={this.props.movie.moviePoster}/>
         <Card.Body>
           <Card.Title><span>Movie name:</span> {this.props.movie.movieTitle}</Card.Title>
@@ -22,12 +22,6 @@ class MovieCard extends React.Component {
           </Card.Text>
         </Card.Body>
       </Card>
-      // imdb_id
-      //  Movie name: title
-      //   Length in minutes: runtime
-      //   Poster: poster_path
-      //   Director
-      //   Main stars
     )
   }
 }

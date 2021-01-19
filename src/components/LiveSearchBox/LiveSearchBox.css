@@ -1,3 +1,7 @@
 .list-group-item:hover {
   cursor: pointer;
 }
+.movies-wrap {
+  width: 80%;
+  margin: 0 auto;
+}

@@ -6,6 +6,8 @@ import './App.css';
 import ActorsGallery from './components/ActorsGallery/ActorsGallery';
 import Actor from './data-models/Actor';
 import MoviePage from './components/MoviePage/MoviePage';
+import { Jumbotron, Nav } from 'react-bootstrap';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 //solution without json
 // function App() {
@@ -29,11 +31,39 @@ class App extends React.Component {
 
   render () {
     return (
-      <Container className="App">
-        <h1>Most Popular Actors</h1>
-        <ActorsGallery actors={this.state.actorsData}/>
-        <MoviePage />
-      </Container>
+      <HashRouter>
+        <Container className="App">
+          <Nav className="justify-content-center py-5" activeKey="/home">
+            <Nav.Item>
+              <Nav.Link className="nav-link" href="/#">Home</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link className="nav-link" href="/#/actors">Actors</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link className="nav-link" href="/#/movies">Movies</Nav.Link>
+            </Nav.Item>
+          </Nav>
+          <Switch>
+            <Route exact path="/">
+              <Jumbotron className="home-page">
+                <h1>Welcome to movie finder</h1>
+                <p>
+                  This is a super hero project, that calling
+                  extra attention to featured content or information.
+                </p>
+              </Jumbotron>
+            </Route>
+            <Route exact path="/actors">
+              <h1>Most Popular Actors</h1>
+              <ActorsGallery actors={this.state.actorsData}/>
+            </Route>
+            <Route exact path="/movies">
+              <MoviePage />
+            </Route>
+          </Switch>
+        </Container>
+      </HashRouter>
     );
   }
 
@@ -49,7 +79,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// https://developers.themoviedb.org/3/search/person?api_key=axios&query=
-
-// https://api.themoviedb.org/3/search/person?api_key=88ed0bf1277ae4fc655a409bbd11dcbe&query=Felicity%20Jones

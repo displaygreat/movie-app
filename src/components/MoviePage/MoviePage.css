@@ -1,8 +1,12 @@
-.c-movie-page {
-  padding: 40px;
-}
 .movies-desk {
   display: flex;
   justify-content: space-between;
   padding: 40px 0;
+}
+
+@media (max-width: 780px) {
+  .movies-desk {
+    flex-direction: column;
+    justify-content: center;
+  }
 }

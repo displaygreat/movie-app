@@ -1,5 +1,6 @@
 #root {
   background-color: #282c34;
+  padding-bottom: 100px;
 }
 .App {
   text-align: center;
@@ -9,6 +10,14 @@
   height: 40vmin;
   pointer-events: none;
   font-weight: 800;
+}
+.nav-link {
+  color: #fff;
+  border-bottom: 1px solid transparent;
+}
+.nav-link:hover {
+  color: #fff;
+  border-bottom: 1px solid #fff;
 }
 h1 {
   color: #f5c50c;
@@ -20,6 +29,9 @@ img {
 img:hover {
   transform: scale(1.01);
   transition: width 3s ease-in-out;
+}
+.home-page {
+  margin-bottom: 0 !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {
