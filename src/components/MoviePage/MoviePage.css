@@ -1,0 +1,8 @@
+.c-movie-page {
+  padding: 40px;
+}
+.movies-desk {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}

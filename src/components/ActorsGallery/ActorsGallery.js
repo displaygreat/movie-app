@@ -1,7 +1,6 @@
 import React from 'react';
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ActorCard from '../ActorCard/ActorCard';
 
@@ -16,7 +15,7 @@ class ActorsGallery extends React.Component {
 
   handleOnChange = (event) => {
   this.setState({value: event.target.value})
-  console.log(event.target.value);
+  // console.log(event.target.value);
   }
 
   render() {
@@ -51,7 +50,7 @@ class ActorsGallery extends React.Component {
           </div>
             
           <div className="d-flex justify-content-between pb-5">
-           {filteredActorsGallery.map((actor) => <ActorCard actor={actor}/>)}
+           {filteredActorsGallery.map((actor, index) => <ActorCard key={index} actor={actor}/>)}
           </div>
           
         </div>

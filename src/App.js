@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import './App.css';
 import ActorsGallery from './components/ActorsGallery/ActorsGallery';
 import Actor from './data-models/Actor';
+import MoviePage from './components/MoviePage/MoviePage';
 
 //solution without json
 // function App() {
@@ -31,6 +32,7 @@ class App extends React.Component {
       <Container className="App">
         <h1>Most Popular Actors</h1>
         <ActorsGallery actors={this.state.actorsData}/>
+        <MoviePage />
       </Container>
     );
   }
@@ -47,3 +49,7 @@ class App extends React.Component {
 }
 
 export default App;
+
+// https://developers.themoviedb.org/3/search/person?api_key=axios&query=
+
+// https://api.themoviedb.org/3/search/person?api_key=88ed0bf1277ae4fc655a409bbd11dcbe&query=Felicity%20Jones
